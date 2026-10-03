@@ -72,7 +72,7 @@ Run it from the repository folder so the textures load, and stop it with <kbd>Ct
 - The world has hard edges. Walking or clicking past the right end, clicking or falling below the bottom row, or detonating TNT near the right or bottom edge raises `IndexError`, while negative indices silently wrap to the other end of the world.
 - Collision only checks one cell at knee height when walking and the cell under the feet when falling. There is no ceiling check, so a jump passes through blocks overhead.
 - The hotbar is drawn, but the nine-slot inventory list is never used. `tronco.png` (log) is loaded, but a typo scales the dirt texture into it, and logs are never placed. There is no saving.
-- In `experiments/isometric-blocks`, the world is built by list multiplication, so rows share one list: the intended 3 × 3 × 3 dirt cube is drawn as a bar running off the right edge, and a click removes a whole row of it. The click test also swaps x and y relative to the drawing, so the removed row is not the one under the cursor.
+- In `experiments/isometric-blocks`, the world is built by list multiplication, so rows share one list: the intended 3 × 3 × 3 dirt cube is drawn as a bar running off the right edge, and a click removes a whole row of it. The click test also swaps x and y relative to the drawing, so the removed row is not the one under the cursor. A click near the top edge of the window raises `IndexError`, because the visibility check reads one cell past the grid.
 
 ## Background
 
