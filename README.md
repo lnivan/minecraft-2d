@@ -7,7 +7,6 @@
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Pygame](https://img.shields.io/badge/Pygame-2.x-30363D?style=flat-square)
 ![Status](https://img.shields.io/badge/status-prototype-BF8700?style=flat-square)
-![Year](https://img.shields.io/badge/year-2023-8250DF?style=flat-square)
 
 <img src="docs/preview.gif" alt="A pixel-art player jumps, sprints, builds a stone pillar, digs a pit and sets off two TNT blocks that blast craters, then drops into the hole; recorded with a hand-picked seed that puts the surface at spawn height, cropped around the player" width="560">
 
@@ -73,10 +72,6 @@ Run it from the repository folder so the textures load, and stop it with <kbd>Ct
 - Collision only checks one cell at knee height when walking and the cell under the feet when falling. There is no ceiling check, so a jump passes through blocks overhead.
 - The hotbar is drawn, but the nine-slot inventory list is never used. `tronco.png` (log) is loaded, but a typo scales the dirt texture into it, and logs are never placed. There is no saving.
 - In `experiments/isometric-blocks`, the world is built by list multiplication, so rows share one list: the intended 3 × 3 × 3 dirt cube is drawn as a bar running off the right edge, and a click removes a whole row of it. The click test also swaps x and y relative to the drawing, so the removed row is not the one under the cursor. A click near the top edge of the window raises `IndexError`, because the visibility check reads one cell past the grid.
-
-## Background
-
-Written around 2023, on or before June 2023. Both programs come from a code backup made that month; the isometric prototype is the earlier attempt at the same idea.
 
 ---
 
